@@ -8,6 +8,28 @@ Requirements
 In order to build dwm you need the Xlib header files.
 
 
+(Non)-Features
+--------------
+	1) No default keybinding for launching a terminal.
+	2) No trace of dmenu.
+	3) Ability cycle layouts with Mod4+Shift+{comma,period)
+	4) Ability to push the focused window up or down in the stack.
+	5) Remove the border when there is only one window visible.
+	6) Awesomebar for functionality.
+	7) No Extras!!!!
+		7.1) Notice there is no patch for gaps, more bar colors, more layouts, or bar padding. This is because these are not nessacary at all from a utility standpoint. I add what I think is needed, you add the rest.
+
+
+Patches
+-------
+	1) Awesomebar
+	2) Cyclelayouts
+	3) Noborder
+	4) Nodmenu
+	5) Push
+	6) Warp
+
+
 Installation
 ------------
 Edit config.mk to match your local setup (dwm is installed into
