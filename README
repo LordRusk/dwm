@@ -27,7 +27,6 @@ Patches
 	3) Noborder
 	4) Nodmenu
 	5) Push
-	6) Warp
 
 
 Installation
@@ -46,6 +45,14 @@ Running dwm
 Add the following line to your .xinitrc to start dwm using startx:
 
     exec dwm
+    
+If you want to be able to restart dwm in an i3 manner, start dwm like this:
+	
+    ssh-agent dwm
+
+Whenever you exit dwm [super + shift + e] it will just restart.
+If you want to exit to the tty, then you need a keybinding that
+kills xorg.
 
 In order to connect dwm to a specific display, make sure that
 the DISPLAY environment variable is set correctly, e.g.:
