@@ -14,19 +14,21 @@ In order to build dwm you need the Xlib header files.
 	2) No trace of dmenu.
 	3) Ability cycle layouts with Mod4+Shift+{comma,period)
 	4) Ability to push the focused window up or down in the stack.
-	5) Remove the border when there is only one window visible.
-	6) Awesomebar for functionality.
-	7) No Extras!!!!
-		7.1) Notice there is no patch for gaps, more bar colors, more layouts, or bar padding. This is because these are not nessacary at all from a utility standpoint. I add what I think is needed, you add the rest.
+	5) Actual fullscreen functionality with keybind. Mod4+f
+	6) Remove the border when there is only one window visible.
+	7) Awesomebar for functionality.
+	8) No Extras!!!!
+		8.1) Notice there is no patch for gaps, more bar colors, more layouts, or bar padding. This is because these are not nessacary at all from a utility standpoint. I add what I think is needed, you add the rest.
 
 
 Patches
 -------
 	1) Awesomebar
-	2) Cyclelayouts
-	3) Noborder
-	4) Nodmenu
-	5) Push
+	2) Actualfullscreen
+	3) Cyclelayouts
+	4) Noborder
+	5) Nodmenu
+	6) Push
 
 
 Installation
