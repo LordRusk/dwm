@@ -71,6 +71,13 @@ like this in your .xinitrc:
     	sleep 1
     done &
     exec dwm
+    
+A 'better' alternative would be to use dwmblocks, my config that
+work with my scripts can be found on my github.
+
+Another alternative is to just make a shell script that fuctions
+like dwmblocks. One of these used to be, and might currently be
+in my dotfiles.
 
 
 Configuration
