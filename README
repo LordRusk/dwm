@@ -84,3 +84,8 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+Harmful
+-------
+If your wondering, "Why isn't <feature> in this build?" Please
+refer to the 'harmful-dwm-features' file in this repository.
