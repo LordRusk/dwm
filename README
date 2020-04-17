@@ -12,23 +12,25 @@ In order to build dwm you need the Xlib header files.
 --------------
 	1) No default keybinding for launching a terminal.
 	2) No trace of dmenu.
-	3) Ability cycle layouts with Mod4+Shift+{comma,period)
+	3) Ability cycle layouts with Mod4+Shift+{comma,period).
 	4) Ability to push the focused window up or down in the stack.
 	5) Actual fullscreen functionality with keybind. Mod4+f
-	6) Remove the border when there is only one window visible.
-	7) Awesomebar for functionality.
-	8) No Extras!!!!
-		8.1) Notice there is no patch for gaps, more bar colors, more layouts, or bar padding. This is because these are not nessacary at all from a utility standpoint. I add what I think is needed, you add the rest.
+	6) Do not allow the focus to drift from the active fullscreen client when using focusstack().
+	7) Borders Inspired by the xmonad feature of the same name.
+	8) Awesomebar for functionality.
+	9) No Extras!!!!
+		9.1) Notice there is no patch for gaps, more bar colors, more layouts, or bar padding. This is because these are not nessacary at all from a utility standpoint. I add what I think is needed, you add the rest.
 
 
 Patches
 -------
 	1) Awesomebar
 	2) Actualfullscreen
-	3) Cyclelayouts
-	4) Noborder
+	3) Alwaysfullscreen
+	4) Cyclelayouts
 	5) Nodmenu
-	6) Push
+	6) smartborders.
+	7) Push
 
 
 Installation
@@ -47,9 +49,9 @@ Running dwm
 Add the following line to your .xinitrc to start dwm using startx:
 
     exec dwm
-    
+
 If you want to be able to restart dwm in an i3 manner, start dwm like this:
-	
+
     ssh-agent dwm
 
 Whenever you exit dwm [super + shift + e] it will just restart.
@@ -71,7 +73,7 @@ like this in your .xinitrc:
     	sleep 1
     done &
     exec dwm
-    
+
 A 'better' alternative would be to use dwmblocks, my config that
 work with my scripts can be found on my github.
 
