@@ -16,7 +16,7 @@ In order to build dwm you need the Xlib header files.
 	4) Ability to push the focused window up or down in the stack.
 	5) Actual fullscreen functionality with keybind. Mod4+f
 	6) Do not allow the focus to drift from the active fullscreen client when using focusstack().
-	7) Borders Inspired by the xmonad feature of the same name.
+	7) Smartborders Inspired by the xmonad feature of the same name.
 	8) Awesomebar for functionality.
 	9) No Extras!!!!
 		9.1) Notice there is no patch for gaps, more bar colors, more layouts, or bar padding. This is because these are not nessacary at all from a utility standpoint. I add what I think is needed, you add the rest.
