@@ -14,7 +14,6 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 - True fullscreen (`super+f`) and prevents focus shifting.
 - Windows can be made sticky (`super+ctrl+s`)
 - Push windows up/down in stack (`super+shift+j/k`)
-- Border only when more then one window is visible
 - Swallow patch: if a program run from a terminal would make it inoperable, it temporarily takes its place to save space.
 - Scratch pads with st, lf, and surf defualts.
 - NO DMENU
