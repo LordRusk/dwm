@@ -10,6 +10,7 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 
 - Clickable statusbar with my build of [dwmblocks](https://github.com/lordrusk/dwmblocks)
 - Cycle through layouts (fibonacci) with  (`super+shift+comma/period`)
+- All layouts have gaps through `vanity gaps`
 - True fullscreen (`super+f`) and prevents focus shifting.
 - Windows can be made sticky (`super+ctrl+s`)
 - Push windows up/down in stack (`super+shift+j/k`)
@@ -17,7 +18,6 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 - Swallow patch: if a program run from a terminal would make it inoperable, it temporarily takes its place to save space.
 - Scratch pads with st, lf, and surf defualts.
 - NO DMENU
-- NO GAPS
 
 ## Please install `libxft-bgra`!
 
