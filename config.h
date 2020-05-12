@@ -22,6 +22,18 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_white, col_gray2,  col_red  },
 };
 
+typedef struct {
+	const char *name;
+	const void *cmd;
+} Sp;
+const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
+const char *spcmd2[] = {"st", "-n", "splf", "-g", "144x41", "-e", "startlf", NULL };
+static Sp scratchpads[] = {
+	/* name          cmd  */
+	{"spterm",      spcmd1},
+	{"spranger",    spcmd2},
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
@@ -34,6 +46,9 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           0,         0,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,         0,        -1 },
 	{ "st",       NULL,       NULL,       0,            0,           1,         1,        -1 },
+	{ NULL,	    "spterm",	  NULL,	    SPTAG(0),	    1,		 0,	    0,        -1 },
+	{ NULL,	    "splf",	  NULL,	    SPTAG(1),	    1,		 0,	    0,        -1 },
+
 };
 
 /* layout(s) */
@@ -46,7 +61,7 @@ static const Layout layouts[] = {
 	/* symbol     arrange function */
  	{ "[@]",      spiral },  /* first entry is default */
 	{ "[]=",      tile },
- 	{ "[\\]",      dwindle },
+ 	{ "[\\]",     dwindle },
 	{ "><>",      NULL },    /* no layout function means floating behavior */
 	{ "[M]",      monocle },
 	{ NULL,       NULL },
@@ -70,6 +85,8 @@ static const char *termcmd[]  = { "st", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             0,	   spawn,          {.v = termcmd } },
+	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
+	{ MODKEY,            		XK_u,	   togglescratch,  {.ui = 1 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
@@ -118,7 +135,7 @@ static Button buttons[] = {
 	{ ClkStatusText,        0,              Button3,        sigdwmblocks,   {.i = 3} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
-	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
+	{ ClkClientWin,         MODKEY,         Button1,        resizemouse,    {0} },
 	{ ClkTagBar,            0,              Button1,        view,           {0} },
 	{ ClkTagBar,            0,              Button3,        toggleview,     {0} },
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
