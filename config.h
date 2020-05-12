@@ -26,12 +26,14 @@ typedef struct {
 	const char *name;
 	const void *cmd;
 } Sp;
-const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
+const char *spcmd1[] = {"st", "-n", "spterm", "-g", "144x41", NULL };
 const char *spcmd2[] = {"st", "-n", "splf", "-g", "144x41", "-e", "startlf", NULL };
+const char *spcmd3[] = {"tabbed", "-n", "spsurf", "-g", "1200x900", "-c", "surf", "-e", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
-	{"spranger",    spcmd2},
+	{"splf",	spcmd2},
+	{"spsurf",	spcmd3},
 };
 
 /* tagging */
@@ -48,6 +50,7 @@ static const Rule rules[] = {
 	{ "st",       NULL,       NULL,       0,            0,           1,         1,        -1 },
 	{ NULL,	    "spterm",	  NULL,	    SPTAG(0),	    1,		 0,	    0,        -1 },
 	{ NULL,	    "splf",	  NULL,	    SPTAG(1),	    1,		 0,	    0,        -1 },
+	{ NULL,	    "spsurf",	  NULL,	    SPTAG(2),	    1,		 0,	    0,        -1 },
 
 };
 
@@ -87,13 +90,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             0,	   spawn,          {.v = termcmd } },
 	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,            		XK_u,	   togglescratch,  {.ui = 1 } },
+	{ MODKEY,            		XK_i, 	   togglescratch,  {.ui = 2 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
 	{ MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
-	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
-	{ MODKEY,                       XK_o,      incnmaster,     {.i = -1 } },
+	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
+	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
@@ -106,8 +110,8 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_s,      togglesticky,   {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_comma,  focusmon,       {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	TAGKEYS(                        XK_1,                      0)
