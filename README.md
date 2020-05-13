@@ -9,13 +9,14 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 ## Patches and features
 
 - Clickable statusbar with my build of [dwmblocks](https://github.com/lordrusk/dwmblocks)
-- Cycle through layouts (fibonacci) with  (`super+shift+comma/period`)
+- Cycle through layouts (Fibonacci) with  (`super+shift+comma/period`)
 - All layouts have gaps through `vanity gaps`
 - True fullscreen (`super+f`) and prevents focus shifting.
 - Windows can be made sticky (`super+ctrl+s`)
 - Push windows up/down in stack (`super+shift+j/k`)
 - Swallow patch: if a program run from a terminal would make it inoperable, it temporarily takes its place to save space.
-- Scratch pads with st, lf, and surf defualts.
+- Floating windows after being forced into tiled mode will revert to their original size when they go back to floating.
+- Scratch pads with st, lf, and surf defaults.
 - NO DMENU
 
 ## Please install `libxft-bgra`!
