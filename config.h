@@ -53,8 +53,6 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   isterminal noswallow monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           0,         0,        -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,         0,        -1 },
 	{ "st",       NULL,       NULL,       0,            0,           1,         1,        -1 },
 	{ NULL,	    "spterm",	  NULL,	    SPTAG(0),	    1,		 1,	    0,        -1 },
 	{ NULL,	    "splf",	  NULL,	    SPTAG(1),	    1,		 1,	    0,        -1 },
