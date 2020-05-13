@@ -34,12 +34,14 @@ typedef struct {
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "144x41", NULL };
 const char *spcmd2[] = {"st", "-n", "splf", "-g", "144x41", "-e", "startlf", NULL };
-const char *spcmd3[] = {"tabbed", "-n", "spsurf", "-g", "1200x900", "-c", "surf", "-e", NULL };
+const char *spcmd3[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
+const char *spcmd4[] = {"tabbed", "-n", "spsurf", "-g", "1200x900", "-c", "surf", "-e", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"splf",	spcmd2},
-	{"spsurf",	spcmd3},
+	{"spclac",	spcmd3},
+	{"spsurf",	spcmd4},
 };
 
 /* tagging */
@@ -54,9 +56,10 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            1,           0,         0,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           0,         0,        -1 },
 	{ "st",       NULL,       NULL,       0,            0,           1,         1,        -1 },
-	{ NULL,	    "spterm",	  NULL,	    SPTAG(0),	    1,		 0,	    0,        -1 },
-	{ NULL,	    "splf",	  NULL,	    SPTAG(1),	    1,		 0,	    0,        -1 },
-	{ NULL,	    "spsurf",	  NULL,	    SPTAG(2),	    1,		 0,	    0,        -1 },
+	{ NULL,	    "spterm",	  NULL,	    SPTAG(0),	    1,		 1,	    0,        -1 },
+	{ NULL,	    "splf",	  NULL,	    SPTAG(1),	    1,		 1,	    0,        -1 },
+	{ NULL,	    "spcalc",	  NULL,	    SPTAG(2),	    1,		 1,	    0,        -1 },
+	{ NULL,	    "spsurf",	  NULL,	    SPTAG(3),	    1,		 0,	    0,        -1 },
 
 };
 
@@ -106,7 +109,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             0,	   spawn,          {.v = termcmd } },
 	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,            		XK_u,	   togglescratch,  {.ui = 1 } },
-	{ MODKEY,            		XK_i, 	   togglescratch,  {.ui = 2 } },
+	{ MODKEY|ShiftMask,            	XK_c, 	   togglescratch,  {.ui = 2 } },
+	{ MODKEY,            		XK_i, 	   togglescratch,  {.ui = 3 } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,			XK_z,	   incrgaps,	   {.i = +3 } },
 	{ MODKEY,			XK_x,	   incrgaps,	   {.i = -3 } },
