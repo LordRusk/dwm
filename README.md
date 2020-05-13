@@ -9,7 +9,7 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 ## Patches and features
 
 - Clickable statusbar with my build of [dwmblocks](https://github.com/lordrusk/dwmblocks)
-- Cycle through layouts (Fibonacci) with  (`super+shift+comma/period`)
+- Cycle through layouts with  (`super+shift+comma/period`)
 - All layouts have gaps through `vanity gaps`
 - True fullscreen (`super+f`) and prevents focus shifting.
 - Windows can be made sticky (`super+ctrl+s`)
