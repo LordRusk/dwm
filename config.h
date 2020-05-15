@@ -52,14 +52,19 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   isterminal noswallow monitor */
-	{ "st",       NULL,       NULL,       0,            0,           1,         1,        -1 },
-	{ "st",       NULL,    "/bin/sh",     0,            1,           1,         1,        -1 },
-	{ NULL,	    "spterm",	  NULL,	    SPTAG(0),	    1,		 1,	    0,        -1 },
-	{ NULL,	    "splf",	  NULL,	    SPTAG(1),	    1,		 1,	    0,        -1 },
-	{ NULL,	    "spcalc",	  NULL,	    SPTAG(2),	    1,		 1,	    0,        -1 },
-	{ NULL,	    "spsurf",	  NULL,	    SPTAG(3),	    1,		 0,	    0,        -1 },
+	/* class      instance    title       tags mask	    iscentered  isfloating  isterminal  noswallow monitor */
 
+	/* Rule to make all windows to be centered when floating */
+	{ NULL,	      NULL,	  NULL,	      0,	    1,		0,	    0,		0,        -1 },
+
+	/* Rule to make surf's `dlconsole` start floating */
+	{ "st",       NULL,    "/bin/sh",     0,            1,		1,          1,		1,        -1 },
+
+	/* All the scratch pads */
+	{ NULL,	      "spterm",	  NULL,	    SPTAG(0),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "splf",	  NULL,	    SPTAG(1),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "spcalc",	  NULL,	    SPTAG(2),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "spsurf",	  NULL,	    SPTAG(3),	    1,		1,	    1,		0,        -1 },
 };
 
 /* layout(s) */

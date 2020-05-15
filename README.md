@@ -15,7 +15,7 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 - Windows can be made sticky (`super+ctrl+s`)
 - Push windows up/down in stack (`super+shift+j/k`)
 - Swallow patch: if a program run from a terminal would make it inoperable, it temporarily takes its place to save space.
-- Floating windows after being forced into tiled mode will revert to their original size when they go back to floating.
+- All floating windows will appear in the center of the screen and floating windows after being forced into tiled mode will revert to their last  size when their previous floating size.
 - Scratch pads with st, lf, and surf defaults.
 - NO DMENU
 
