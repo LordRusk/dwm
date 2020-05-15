@@ -54,6 +54,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   isterminal noswallow monitor */
 	{ "st",       NULL,       NULL,       0,            0,           1,         1,        -1 },
+	{ "st",       NULL,    "/bin/sh",     0,            1,           1,         1,        -1 },
 	{ NULL,	    "spterm",	  NULL,	    SPTAG(0),	    1,		 1,	    0,        -1 },
 	{ NULL,	    "splf",	  NULL,	    SPTAG(1),	    1,		 1,	    0,        -1 },
 	{ NULL,	    "spcalc",	  NULL,	    SPTAG(2),	    1,		 1,	    0,        -1 },
