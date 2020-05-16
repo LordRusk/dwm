@@ -13,6 +13,7 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 - All layouts have gaps through `vanity gaps`
 - True fullscreen (`super+f`) and prevents focus shifting.
 - Windows can be made sticky (`super+ctrl+s`)
+- Selects the next window having the urgent flag regardless of the tag its on with (`super+shift+u`)
 - Push windows up/down in stack (`super+shift+j/k`)
 - Swallow patch: if a program run from a terminal would make it inoperable, it temporarily takes its place to save space.
 - All floating windows will appear in the center of the screen and floating windows after being forced into tiled mode will revert to their last  size when their previous floating size.

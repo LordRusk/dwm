@@ -111,6 +111,7 @@ static const Layout layouts[] = {
 static const char *termcmd[]  = { "st", NULL };
 
 #include "push.c"
+#include "focusurgent.c"
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             0,	   spawn,          {.v = termcmd } },
@@ -125,6 +126,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_a,	   defaultgaps,	   {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
++	{ MODKEY|ShiftMask,             XK_u,      focusurgent,    {0} },
 	{ MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
 	{ MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
 	{ MODKEY,                       XK_o,      incnmaster,     {.i = +1 } },
