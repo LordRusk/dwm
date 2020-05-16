@@ -52,7 +52,7 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask	    iscentered  isfloating  isterminal  noswallow monitor */
+	/* class      instance    title       tags mask	    iscentered  isfloating  isterminal  swallow	  monitor */
 
 	/* Rule to make all windows centered when floating */
 	{ NULL,	      NULL,	  NULL,	      0,	    1,		0,	    0,		0,        -1 },
