@@ -54,8 +54,11 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask	    iscentered  isfloating  isterminal  noswallow monitor */
 
-	/* Rule to make all windows to be centered when floating */
+	/* Rule to make all windows centered when floating */
 	{ NULL,	      NULL,	  NULL,	      0,	    1,		0,	    0,		0,        -1 },
+
+	/* Rule to make st swallow programs started in the terminal that would make it inoperable */
+	{ "st",	      NULL,	  NULL,	      0,	    1,		0,	    1,		1,        -1 },
 
 	/* Rule to make surf's `dlconsole` start floating */
 	{ "st",       NULL,    "/bin/sh",     0,            1,		1,          1,		1,        -1 },
