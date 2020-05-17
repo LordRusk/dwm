@@ -60,8 +60,9 @@ static const Rule rules[] = {
 	/* Rule to make st swallow programs started in the terminal that would make it inoperable */
 	{ "st",	      NULL,	  NULL,	      0,	    1,		0,	    1,		1,        -1 },
 
-	/* Rule to make surf's `dlconsole` start floating */
+	/* Rules to make certain windows automatically float */
 	{ "st",       NULL,    "/bin/sh",     0,            1,		1,          1,		1,        -1 },
+	{ "st",       NULL,   "popupgrade",    0,            1,		1,          1,		1,        -1 },
 
 	/* All the scratch pads */
 	{ NULL,	      "spterm",	  NULL,	    SPTAG(0),	    1,		1,	    1,		0,        -1 },
