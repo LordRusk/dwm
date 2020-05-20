@@ -190,6 +190,12 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,		XK_r,		spawn,		SHCMD("dmenurefbar") },
 	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("$LOCKER") },
 
+	/* Recording keys */
+	{ MODKEY,			XK_F12,		spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
+	{ MODKEY|ShiftMask,		XK_F12,		spawn,		SHCMD("maimpick") },
+	{ MODKEY,			XK_r,		spawn,		SHCMD("dmenurecord; pkill -RTMIN+9 $STATUSBAR") },
+	{ MODKEY,			XK_Delete,		spawn,		SHCMD("dmenurecord kill; pkill -RTMIN+9 $STATUSBAR") },
+
 	/* Power keys */
 	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("prompt 'Shutdown Computer?' 'sudo -A shutdown -h now'") },
 	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("prompt 'Reboot Computer?' 'sudo -A reboot'") },
@@ -223,7 +229,6 @@ static Key keys[] = {
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("notify-send '📧 Syncing Mail'; mailsync && notify-send '📧 Mail Synced'; pkill -RTMIN+12 $STATUSB") },
 	{ MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F10,		spawn,		SHCMD("dmenuumount") },
-	{ MODKEY,			XK_F12,		spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
 
 };
 
