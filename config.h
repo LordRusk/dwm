@@ -166,7 +166,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_t,		spawn,		SHCMD("torwrap; pkill -RTMIN+7 $STATUSBAR") },
 	{ MODKEY|ShiftMask,		XK_t,		spawn,		SHCMD("$TERMINAL -e toxic") },
 	{ MODKEY|ShiftMask,		XK_h,		spawn,		SHCMD("selectionhandler dmenuhandler") },
-	{ MODKEY|ShiftMask,		XK_h,		spawn,		SHCMD("selectionhandler linkhandler") },
+	{ MODKEY|ControlMask,		XK_h,		spawn,		SHCMD("selectionhandler linkhandler") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat") },
 	{ MODKEY,			XK_c,		spawn,		SHCMD("$TERMINAL -e calcurse -D ~/.config/calcurse") },
 	{ MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title='mpvfloat' /dev/video0") },
