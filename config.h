@@ -60,6 +60,7 @@ static const Rule rules[] = {
 	{ "st",	      NULL,	  NULL,	      0,	    1,		0,	    1,		1,        -1 },
 
 	/* Rules to make certain windows automatically float */
+	{ "st",       NULL,      "lfmpv",     0,            1,		1,          1,		0,        -1 },
 	{ "st",       NULL,    "/bin/sh",     0,            1,		1,          1,		1,        -1 },
 	{ "st",       NULL,   "popupgrade",   0,            1,		1,          1,		1,        -1 },
 
