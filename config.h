@@ -191,9 +191,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("$LOCKER") },
 
 	/* Power keys */
-	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("'Shutdown Computer?' 'sudo -A shutdown -h now'") },
-	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("'Reboot Computer?' 'sudo -A reboot'") },
-	{ MODKEY|ShiftMask,		XK_Escape,	spawn,		SHCMD("'Exit Xorg?' 'sudo killall Xorg'") },
+	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("prompt 'Shutdown Computer?' 'sudo -A shutdown -h now'") },
+	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("prompt 'Reboot Computer?' 'sudo -A reboot'") },
+	{ MODKEY|ShiftMask,		XK_Escape,	spawn,		SHCMD("prompt 'Exit Xorg?' 'sudo killall Xorg'") },
 
 	/* XF86 keys */
 
