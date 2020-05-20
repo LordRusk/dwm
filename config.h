@@ -117,7 +117,7 @@ static const char *termcmd[]  = { "st", NULL };
 static Key keys[] = {
 	/* modifier                     key        	function        argument */
 
-	/* Dwm control keys */
+	/* dwm control keys */
 	{ MODKEY,                       XK_b,     	togglebar,      {0} },
 	{ MODKEY,			XK_z,	  	incrgaps,	{.i = +3 } },
 	{ MODKEY,			XK_x,	  	incrgaps,	{.i = -3 } },
@@ -136,7 +136,6 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,   	view,           {0} },
 	{ MODKEY|ControlMask,		XK_comma, 	cyclelayout,    {.i = -1 } },
 	{ MODKEY|ControlMask,           XK_period,	cyclelayout,    {.i = +1 } },
-	{ MODKEY,                       XK_space, 	setlayout,      {0} },
  	{ MODKEY|ShiftMask,             XK_f,     	togglefloating, {0} },
 	{ MODKEY,	                XK_f,     	togglefullscr,  {0} },
 	{ MODKEY|ControlMask,           XK_s,     	togglesticky,   {0} },
@@ -158,7 +157,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
 
-	/* Spawn Keys */
+	/* spawn Keys */
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_d,		spawn,		SHCMD("dmenu_run -l 20") },
 	{ MODKEY,			XK_v,		spawn,		SHCMD("$TERMINAL -e startlf") },
@@ -173,14 +172,14 @@ static Key keys[] = {
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("$TERMINAL -e nmtui") },
 
-	/* Scratch pads */
+	/* scratch pads */
 	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,            		XK_u,	   togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,             XK_p,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY|ShiftMask,            	XK_c, 	   togglescratch,  {.ui = 3 } },
 	{ MODKEY,            		XK_i, 	   togglescratch,  {.ui = 4 } },
 
-	/* Control keys */
+	/* control keys */
 	{ MODKEY,			XK_grave,	spawn,		SHCMD("dmenuunicode") },
 	{ MODKEY,			XK_Insert,	spawn,		SHCMD("showclip") },
 	{ MODKEY|ShiftMask,		XK_Insert,	spawn,		SHCMD("switchclip") },
@@ -190,13 +189,13 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,		XK_r,		spawn,		SHCMD("dmenurefbar") },
 	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("$LOCKER") },
 
-	/* Recording keys */
+	/* recording keys */
 	{ MODKEY,			XK_F12,		spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
 	{ MODKEY|ShiftMask,		XK_F12,		spawn,		SHCMD("maimpick") },
 	{ MODKEY,			XK_r,		spawn,		SHCMD("dmenurecord; pkill -RTMIN+9 $STATUSBAR") },
 	{ MODKEY,			XK_Delete,		spawn,		SHCMD("dmenurecord kill; pkill -RTMIN+9 $STATUSBAR") },
 
-	/* Power keys */
+	/* power keys */
 	{ MODKEY|ShiftMask,		XK_x,		spawn,		SHCMD("prompt 'Shutdown Computer?' 'sudo -A shutdown -h now'") },
 	{ MODKEY|ShiftMask,		XK_BackSpace,	spawn,		SHCMD("prompt 'Reboot Computer?' 'sudo -A reboot'") },
 	{ MODKEY|ShiftMask,		XK_Escape,	spawn,		SHCMD("prompt 'Exit Xorg?' 'sudo killall Xorg'") },
@@ -222,7 +221,7 @@ static Key keys[] = {
 	{ 0, XF86XK_MonBrightnessUp,	spawn,		SHCMD("xbacklight -inc 15") },
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15") },
 
-	/* Function Keys */
+	/* function Keys */
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD("prompt 'Would You Like To Put The Computer To Sleep?' 'sudo -A zzz'") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
@@ -251,11 +250,17 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
 
+/* dwmc stuff */
 void
 setlayoutex(const Arg *arg)
 {
 	setlayout(&((Arg) { .v = &layouts[arg->i] }));
 }
+
+//void
+//cyclelayout(const Arg *arg)
+//{
+//	cyclelayout(&((Arg) ( .i = 1 << arg->i }));
 
 void
 viewex(const Arg *arg)
@@ -303,6 +308,8 @@ static Signal signals[] = {
 	{ "togglebar",      togglebar },
 	{ "incnmaster",     incnmaster },
 	{ "togglefloating", togglefloating },
+	{ "togglefullscr",  togglefullscr },
+	{ "togglesticky",   togglesticky },
 	{ "focusmon",       focusmon },
 	{ "tagmon",         tagmon },
 	{ "zoom",           zoom },
@@ -320,4 +327,8 @@ static Signal signals[] = {
 	{ "quit",           quit },
 	{ "setlayout",      setlayout },
 	{ "setlayoutex",    setlayoutex },
+	{ "cyclelayout",    cyclelayout },
+	{ "pushup",         pushup },
+	{ "pushdown",       pushdown },
+	{ "togglescratch",  togglescratch },
 };
