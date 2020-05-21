@@ -107,7 +107,7 @@ static const Layout layouts[] = {
 	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
-#define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
+#define SHCMD(cmd) { .v = (const char*[]){ "/bin/dash", "-c", cmd, NULL } }
 
 /* commands */
 static const char *termcmd[]  = { "st", NULL };
@@ -167,6 +167,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_t,		spawn,		SHCMD("$TERMINAL -e toxic") },
 	{ MODKEY|ShiftMask,		XK_h,		spawn,		SHCMD("selectionhandler dmenuhandler") },
 	{ MODKEY|ControlMask,		XK_h,		spawn,		SHCMD("selectionhandler linkhandler") },
+	{ MODKEY|ControlMask|ShiftMask,	XK_h,		spawn,		SHCMD("$TERMINAL -e htop") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat") },
 	{ MODKEY,			XK_c,		spawn,		SHCMD("$TERMINAL -e calcurse -D ~/.config/calcurse") },
 	{ MODKEY|ShiftMask,		XK_c,		spawn,		SHCMD("mpv --no-osc --no-input-default-bindings --input-conf=/dev/null --title='mpvfloat' /dev/video0") },
