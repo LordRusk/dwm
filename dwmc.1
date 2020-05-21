@@ -1,0 +1,49 @@
+.TH DWMC 1 dwm\-VERSION
+.SH NAME
+dwmc \- A fork of fsignal to allow for shell based control of dwm
+.Sh SYNOPSIS
+.B dwmc
+.RB [ \-v ]
+.SH DESCRIPTION
+dwmc is a fork of fsignal[0] to allow for shell based control of dwm.
+This can be used in scripts, or in tools like the SXHKD[1].
+.SH COMMANDS
+focusstack,
+setmfact,
+togglebar,
+incnmaster,
+togglefloating
+togglefullscr,
+togglesticky,
+focusmon,
+tagmon,
+zoom,
+view,
+viewall,
+viewex,
+toggleview,
+toggleviewex,
+tag,
+tagall,
+tagex,
+toggletag,
+toggletagex,
+killclient,
+quit,
+setlayout,
+setlayoutex,
+cyclelayout,
+pushup,
+pushdown,
+togglescratch,
+.SH USAGE
+Here are some usage examples.
+
+dwmc setmfact +0.05
+
+dwmc togglefullscr
+
+dwmc togglescratch 2
+.SH SEE ALSO
+.BR fsignal (1)
+.BR SXHKD (1)

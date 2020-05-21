@@ -17,7 +17,8 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 - Push windows up/down in stack (`super+shift+j/k`)
 - Swallow patch: if a program run from a terminal would make it inoperable, it temporarily takes its place to save space.
 - All floating windows will appear in the center of the screen and floating windows after being forced into tiled mode will revert to their last  size when their previous floating size.
-- Scratch pads with st, lf, and surf defaults.
+- Scratch pads with st, lf, pulsemixer, calculator, and surf defaults.
+- Dwmc that works with all current patches. (pushup/pushdown/cyclelayouts/togglefullscr/togglesticky/togglescratch/etc...)
 - NO DMENU
 
 ## Please install `libxft-bgra`!
