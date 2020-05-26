@@ -147,18 +147,18 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_period,	focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma, 	tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period,	tagmon,         {.i = +1 } },
-	TAGKEYS(                        XK_1,                      0)
-	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_3,                      2)
-	TAGKEYS(                        XK_4,                      3)
-	TAGKEYS(                        XK_5,                      4)
-	TAGKEYS(                        XK_6,                      5)
-	TAGKEYS(                        XK_7,                      6)
-	TAGKEYS(                        XK_8,                      7)
-	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
-	{ MODKEY|ControlMask,           XK_q,      killclient,     SHCMD("xdo kill") },
-	{ MODKEY|ShiftMask,             XK_e,      quit,           {0} },
+	TAGKEYS(                        XK_1,                    	0)
+	TAGKEYS(                        XK_2,                    	1)
+	TAGKEYS(                        XK_3,                    	2)
+	TAGKEYS(                        XK_4,                    	3)
+	TAGKEYS(                        XK_5,                    	4)
+	TAGKEYS(                        XK_6,                    	5)
+	TAGKEYS(                        XK_7,                    	6)
+	TAGKEYS(                        XK_8,                    	7)
+	TAGKEYS(                        XK_9,                    	8)
+	{ MODKEY|ShiftMask,             XK_q,     	killclient,   	{0} },
+	{ MODKEY|ControlMask,           XK_q,     	spawn,        	SHCMD("xdo kill") },
+	{ MODKEY|ShiftMask,             XK_e,     	quit,         	{0} },
 
 	/* spawn Keys */
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,          {.v = termcmd } },
@@ -169,6 +169,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_t,		spawn,		SHCMD("$TERMINAL -e toxic") },
 	{ MODKEY|ShiftMask,		XK_h,		spawn,		SHCMD("selectionhandler dmenuhandler") },
 	{ MODKEY|ControlMask,		XK_h,		spawn,		SHCMD("selectionhandler linkhandler") },
+	{ MODKEY|ShiftMask|ControlMask, XK_h,		spawn,		SHCMD("$TERMINAL -e htop") },
 	{ MODKEY,			XK_g,		spawn,		SHCMD("$TERMINAL -e gotop") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat") },
 	{ MODKEY,			XK_c,		spawn,		SHCMD("$TERMINAL -e calcurse -D ~/.config/calcurse") },
