@@ -157,7 +157,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                    	7)
 	TAGKEYS(                        XK_9,                    	8)
 	{ MODKEY,			XK_q,     	killclient,   	{0} },
-	{ MODKEY,			XK_q,     	spawn,        	SHCMD("xdo kill") },
+	{ MODKEY|ShiftMask,		XK_q,     	spawn,        	SHCMD("xdo kill") },
 	{ MODKEY|ShiftMask,             XK_e,     	quit,         	{0} },
 
 	/* spawn Keys */
