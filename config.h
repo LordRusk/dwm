@@ -207,9 +207,10 @@ static Key keys[] = {
 
 	/* XF86 keys */
 
-	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("lmc toggle; pkill -RTMIN+10 $STATUSBAR") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("lmc up 3; pkill -RTMIN+10 $STATUSBAR") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("lmc down 3; pkill -RTMIN+10 $STATUSBAR") },
+
+	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -$((34+10)) $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -$((34+10)) $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -$((34+10)) $(pidof dwmblocks)") },
 	{ 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
 	{ 0, XF86XK_Calculator,		spawn,		SHCMD("$TERMINAL -e bc -l") },
 	{ 0, XF86XK_Sleep,		spawn,		SHCMD("sudo -A zzz") },
