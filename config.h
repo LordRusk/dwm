@@ -30,7 +30,7 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "144x41", NULL };
-const char *spcmd2[] = {"st", "-n", "splf", "-g", "144x41", "-e", "startlf", NULL };
+const char *spcmd2[] = {"st", "-n", "splf", "-g", "144x41", "-e", "lf", NULL };
 const char *spcmd3[] = {"st", "-n", "sppm", "-g", "144x41", "-e", "pulsemixer", NULL };
 const char *spcmd4[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
 const char *spcmd5[] = {"tabbed", "-n", "spsurf", "-g", "1200x900", "-c", "surf", "-e", NULL };
@@ -163,7 +163,7 @@ static Key keys[] = {
 	/* spawn Keys */
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,          {.v = termcmd } },
 	{ MODKEY,			XK_d,		spawn,		SHCMD("dmenu_run -l 20") },
-	{ MODKEY,			XK_v,		spawn,		SHCMD("$TERMINAL -e startlf") },
+	{ MODKEY,			XK_v,		spawn,		SHCMD("$TERMINAL -e lf") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("$TERMINAL -e neomutt; pkill -RTMIN+12 $STATUSBAR") },
 	{ MODKEY,			XK_t,		spawn,		SHCMD("torwrap; pkill -RTMIN+7 $STATUSBAR") },
 	{ MODKEY|ShiftMask,		XK_t,		spawn,		SHCMD("$TERMINAL -e toxic") },
@@ -219,7 +219,7 @@ static Key keys[] = {
 	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("$LOCKER") },
 	{ 0, XF86XK_TaskPane,		spawn,		SHCMD("$TERMINAL -e gotop") },
 	{ 0, XF86XK_Mail,		spawn,		SHCMD("$TERMINAL -e neomutt ; pkill -RTMIN+12 dwmblocks") },
-	{ 0, XF86XK_MyComputer,		spawn,		SHCMD("$TERMINAL -e startlf") },
+	{ 0, XF86XK_MyComputer,		spawn,		SHCMD("$TERMINAL -e lf") },
 	{ 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
