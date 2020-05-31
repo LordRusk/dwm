@@ -32,15 +32,17 @@ typedef struct {
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "144x41", NULL };
 const char *spcmd2[] = {"st", "-n", "splf", "-g", "144x41", "-e", "lf", NULL };
 const char *spcmd3[] = {"st", "-n", "sppm", "-g", "144x41", "-e", "pulsemixer", NULL };
-const char *spcmd4[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
-const char *spcmd5[] = {"tabbed", "-n", "spsurf", "-g", "1200x900", "-c", "surf", "-e", NULL };
+const char *spcmd4[] = {"st", "-n", "sppu", "-g", "144x41", "-e", "popupgrade", NULL };
+const char *spcmd5[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
+const char *spcmd6[] = {"tabbed", "-n", "spsurf", "-g", "1200x900", "-c", "surf", "-e", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"splf",	spcmd2},
 	{"sppm",	spcmd3},
-	{"spclac",	spcmd4},
-	{"spsurf",	spcmd5},
+	{"sppu",	spcmd4},
+	{"spclac",	spcmd5},
+	{"spsurf",	spcmd6},
 };
 
 /* tagging */
@@ -69,8 +71,9 @@ static const Rule rules[] = {
 	{ NULL,	      "spterm",	  NULL,	    SPTAG(0),	    1,		1,	    1,		0,        -1 },
 	{ NULL,	      "splf",	  NULL,	    SPTAG(1),	    1,		1,	    1,		0,        -1 },
 	{ NULL,	      "sppm",	  NULL,	    SPTAG(2),	    1,		1,	    1,		0,        -1 },
-	{ NULL,	      "spcalc",	  NULL,	    SPTAG(3),	    1,		1,	    1,		0,        -1 },
-	{ NULL,	      "spsurf",	  NULL,	    SPTAG(4),	    1,		1,	    0,		0,        -1 },
+	{ NULL,	      "sppu",	  NULL,	    SPTAG(3),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "spcalc",	  NULL,	    SPTAG(4),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "spsurf",	  NULL,	    SPTAG(5),	    1,		1,	    0,		0,        -1 },
 };
 
 /* layout(s) */
@@ -181,8 +184,9 @@ static Key keys[] = {
 	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,            		XK_u,	   togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,             XK_p,	   togglescratch,  {.ui = 2 } },
-	{ MODKEY|ShiftMask,            	XK_c, 	   togglescratch,  {.ui = 3 } },
-	{ MODKEY,            		XK_i, 	   togglescratch,  {.ui = 4 } },
+	{ MODKEY|ControlMask,           XK_p,	   togglescratch,  {.ui = 3 } },
+	{ MODKEY|ShiftMask,            	XK_c, 	   togglescratch,  {.ui = 4 } },
+	{ MODKEY,            		XK_i, 	   togglescratch,  {.ui = 5 } },
 
 	/* control keys */
 	{ MODKEY,			XK_grave,	spawn,		SHCMD("dmenuunicode") },
