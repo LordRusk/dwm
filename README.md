@@ -12,6 +12,7 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 - Cycle through layouts with  (`super+shift+comma/period`)
 - All layouts have gaps through `vanity gaps`
 - True fullscreen (`super+f`) and prevents focus shifting.
+- Rule for fakefullscreen, forcing window to fullscreen into allocated.
 - Windows can be made sticky (`super+ctrl+s`)
 - Selects the next window having the urgent flag regardless of the tag its on with (`super+shift+u`)
 - Push windows up/down in stack (`super+shift+j/k`)

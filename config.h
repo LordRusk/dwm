@@ -53,27 +53,27 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask	    iscentered  isfloating  isterminal  swallow	  monitor */
+	/* class      instance    title       tags mask	    iscentered  isfloating  isfakefullsreen isterminal  swallow	  monitor */
 
 	/* Rule to make all windows centered when floating */
-	{ NULL,	      NULL,	  NULL,	      0,	    1,		0,	    0,		0,        -1 },
+	{ NULL,	      NULL,	  NULL,	      0,	    1,		0,	    0,		    0,		0,        -1 },
 
-	/* Rule to make st swallow programs started in the terminal that would make it inoperable */
-	{ "st",	      NULL,	  NULL,	      0,	    1,	        0,	    1,		1,        -1 },
+	/* Rule to make st swallow programs started in the terminal that would make		    it inoperable */
+	{ "st",	      NULL,	  NULL,	      0,	    1,	        0,	    0,		    1,		1,        -1 },
 
 	/* Rules to make certain windows automatically float */
-	{ "Gimp",     NULL,       NULL,       0,            1,          1,          0,          1,        -1 },
-	{ "st",       NULL,      "lfmpv",     0,            1,		1,          1,		0,        -1 },
-	{ "st",       NULL,    "/bin/sh",     0,            1,		1,          1,		1,        -1 },
-	{ "st",       NULL,   "popupgrade",   0 << 8,       1,		1,          1,		1,        -1 },
+	{ "Gimp",     NULL,       NULL,       0,            1,          1,          0,		    0,          1,        -1 },
+	{ "st",       NULL,      "lfmpv",     0,            1,		1,          0,		    1,		1,        -1 },
+	{ "st",       NULL,    "/bin/sh",     0,            1,		1,          0,		    1,		1,        -1 },
+	{ "st",       NULL,   "popupgrade",   0 << 8,       1,		1,          0,		    1,		1,        -1 },
 
 	/* All the scratch pads */
-	{ NULL,	      "spterm",	  NULL,	    SPTAG(0),	    1,		1,	    1,		0,        -1 },
-	{ NULL,	      "splf",	  NULL,	    SPTAG(1),	    1,		1,	    1,		0,        -1 },
-	{ NULL,	      "sppm",	  NULL,	    SPTAG(2),	    1,		1,	    1,		0,        -1 },
-	{ NULL,	      "sppu",	  NULL,	    SPTAG(3),	    1,		1,	    1,		0,        -1 },
-	{ NULL,	      "spcalc",	  NULL,	    SPTAG(4),	    1,		1,	    1,		0,        -1 },
-	{ NULL,	      "spsurf",	  NULL,	    SPTAG(5),	    1,		1,	    0,		0,        -1 },
+	{ NULL,	      "spterm",	  NULL,	    SPTAG(0),	    1,		1,	    0,		    1,		0,        -1 },
+	{ NULL,	      "splf",	  NULL,	    SPTAG(1),	    1,		1,	    0,		    1,		0,        -1 },
+	{ NULL,	      "sppm",	  NULL,	    SPTAG(2),	    1,		1,	    0,		    1,		0,        -1 },
+	{ NULL,	      "sppu",	  NULL,	    SPTAG(3),	    1,		1,	    0,		    1,		0,        -1 },
+	{ NULL,	      "spcalc",	  NULL,	    SPTAG(4),	    1,		1,	    0,		    1,		0,        -1 },
+	{ NULL,	      "spsurf",	  NULL,	    SPTAG(5),	    1,		1,	    0,		    0,		0,        -1 },
 };
 
 /* layout(s) */
