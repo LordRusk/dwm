@@ -165,6 +165,7 @@ static Key keys[] = {
 
 	/* spawn Keys */
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("$TERMINAL -e bmon") },
 	{ MODKEY,			XK_d,		spawn,		SHCMD("dmenu_run -l 20") },
 	{ MODKEY,			XK_v,		spawn,		SHCMD("$TERMINAL -e lf") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("$TERMINAL -e neomutt; pkill -RTMIN+12 $STATUSBAR") },
