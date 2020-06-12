@@ -10,7 +10,8 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 
 - Clickable statusbar with my build of [dwmblocks](https://github.com/lordrusk/dwmblocks)
 - Cycle through layouts with  (`super+shift+comma/period`)
-- All layouts have gaps through `vanity gaps`
+- All layouts have gaps through `vanity gaps` (`super+z/x/a`)
+- Borderpx can me adjusted on the fly. (`super+shift+z/x/a`)
 - True fullscreen (`super+f`) and prevents focus shifting.
 - Rule for fakefullscreen, forcing window to fullscreen into allocated area.
 - Windows can be made sticky (`super+ctrl+s`)
