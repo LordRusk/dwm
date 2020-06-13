@@ -179,7 +179,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_c,		spawn,		SHCMD("$TERMINAL -e calcurse -D ~/.config/calcurse") },
 	{ MODKEY|ControlMask,		XK_c,		spawn,		SHCMD("camtoggle") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
-	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("$TERMINAL -e nmtui") },
+	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("$TERMINAL -e nmtui; kill -$((34+2)) $(pidof dwmblocks) && kill -$((34+4)) $(pifof dwmblocks)") },
 
 	/* scratch pads */
 	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
