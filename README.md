@@ -13,7 +13,6 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 - All layouts have gaps through `vanity gaps` (`super+z/x/a`)
 - Borderpx can me adjusted on the fly. (`super+shift+z/x/a`)
 - True fullscreen (`super+f`) and prevents focus shifting.
-- Rule for fakefullscreen, forcing window to fullscreen into allocated area.
 - Windows can be made sticky (`super+ctrl+s`)
 - Selects the next window having the urgent flag regardless of the tag its on with (`super+shift+u`)
 - Push windows up/down in stack (`super+shift+j/k`)

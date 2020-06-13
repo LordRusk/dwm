@@ -53,27 +53,27 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask	    iscentered  isfloating  isfakefullsreen isterminal  swallow	  monitor */
+	/* class      instance    title       tags mask	    iscentered  isfloating  isterminal  swallow	  monitor */
 
 	/* Rule to make all windows centered when floating */
-	{ NULL,	      NULL,	  NULL,	      0,	    1,		0,	    0,		    0,		0,        -1 },
+	{ NULL,	      NULL,	  NULL,	      0,	    1,		0,	    0,		0,        -1 },
 
-	/* Rule to make st swallow programs started in the terminal that would make		    it inoperable */
-	{ "st",	      NULL,	  NULL,	      0,	    1,	        0,	    0,		    1,		1,        -1 },
+	/* Rule to make st swallow programs started in the terminal that would make it inoperable */
+	{ "st",	      NULL,	  NULL,	      0,	    1,	        0,	    1,		1,        -1 },
 
 	/* Rules to make certain windows automatically float */
-	{ "Gimp",     NULL,       NULL,       0,            1,          1,          0,		    0,          1,        -1 },
-	{ "st",       NULL,      "lfmpv",     0,            1,		1,          0,		    1,		1,        -1 },
-	{ "st",       NULL,    "/bin/sh",     0,            1,		1,          0,		    1,		1,        -1 },
-	{ "st",       NULL,   "popupgrade",   0 << 8,       1,		1,          0,		    1,		1,        -1 },
+	{ "Gimp",     NULL,       NULL,       0,            1,          1,          0,          1,        -1 },
+	{ "st",       NULL,      "lfmpv",     0,            1,		1,          1,		1,        -1 },
+	{ "st",       NULL,    "/bin/sh",     0,            1,		1,          1,		1,        -1 },
+	{ "st",       NULL,   "popupgrade",   0 << 8,       1,		1,          1,		1,        -1 },
 
 	/* All the scratch pads */
-	{ NULL,	      "spterm",	  NULL,	    SPTAG(0),	    1,		1,	    0,		    1,		0,        -1 },
-	{ NULL,	      "splf",	  NULL,	    SPTAG(1),	    1,		1,	    0,		    1,		0,        -1 },
-	{ NULL,	      "sppm",	  NULL,	    SPTAG(2),	    1,		1,	    0,		    1,		0,        -1 },
-	{ NULL,	      "sppu",	  NULL,	    SPTAG(3),	    1,		1,	    0,		    1,		0,        -1 },
-	{ NULL,	      "spcalc",	  NULL,	    SPTAG(4),	    1,		1,	    0,		    1,		0,        -1 },
-	{ NULL,	      "spsurf",	  NULL,	    SPTAG(5),	    1,		1,	    0,		    0,		0,        -1 },
+	{ NULL,	      "spterm",	  NULL,	    SPTAG(0),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "splf",	  NULL,	    SPTAG(1),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "sppm",	  NULL,	    SPTAG(2),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "sppu",	  NULL,	    SPTAG(3),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "spcalc",	  NULL,	    SPTAG(4),	    1,		1,	    1,		0,        -1 },
+	{ NULL,	      "spsurf",	  NULL,	    SPTAG(5),	    1,		1,	    0,		0,        -1 },
 };
 
 /* layout(s) */
@@ -112,9 +112,6 @@ static const Layout layouts[] = {
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/dash", "-c", cmd, NULL } }
-
-/* commands */
-static const char *termcmd[]  = { "st", NULL };
 
 #include <X11/XF86keysym.h>
 #include "push.c"
@@ -167,7 +164,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_e,     	quit,         	{0} },
 
 	/* spawn Keys */
-	{ MODKEY|ShiftMask,             XK_Return,	spawn,          {.v = termcmd } },
+	{ MODKEY|ShiftMask,             XK_Return,	spawn,          SHCMD("$TERMINAL") },
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("$TERMINAL -e bmon -p wlp*,*") },
 	{ MODKEY,			XK_d,		spawn,		SHCMD("dmenu_run -l 20") },
 	{ MODKEY,			XK_v,		spawn,		SHCMD("$TERMINAL -e lf") },
@@ -273,27 +270,10 @@ setlayoutex(const Arg *arg)
 	setlayout(&((Arg) { .v = &layouts[arg->i] }));
 }
 
-//void
-//cyclelayout(const Arg *arg)
-//{
-//	cyclelayout(&((Arg) ( .i = 1 << arg->i }));
-
 void
-viewex(const Arg *arg)
+tagall(const Arg *arg)
 {
-	view(&((Arg) { .ui = 1 << arg->ui }));
-}
-
-void
-viewall(const Arg *arg)
-{
-	view(&((Arg){.ui = ~0}));
-}
-
-void
-toggleviewex(const Arg *arg)
-{
-	toggleview(&((Arg) { .ui = 1 << arg->ui }));
+	tag(&((Arg){.ui = ~0}));
 }
 
 void
@@ -309,9 +289,21 @@ toggletagex(const Arg *arg)
 }
 
 void
-tagall(const Arg *arg)
+toggleviewex(const Arg *arg)
 {
-	tag(&((Arg){.ui = ~0}));
+	toggleview(&((Arg) { .ui = 1 << arg->ui }));
+}
+
+void
+viewall(const Arg *arg)
+{
+	view(&((Arg){.ui = ~0}));
+}
+
+void
+viewex(const Arg *arg)
+{
+	view(&((Arg) { .ui = 1 << arg->ui }));
 }
 
 /* signal definitions */
