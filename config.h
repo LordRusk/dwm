@@ -175,7 +175,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,		XK_h,		spawn,		SHCMD("selectionhandler linkhandler") },
 	{ MODKEY|ShiftMask|ControlMask, XK_h,		spawn,		SHCMD("$TERMINAL -e htop") },
 	{ MODKEY,			XK_g,		spawn,		SHCMD("$TERMINAL -e gotop") },
-	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat") },
+	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat; kill -$((34+7)) $(pidof dwmblocks)") },
 	{ MODKEY,			XK_c,		spawn,		SHCMD("$TERMINAL -e calcurse -D ~/.config/calcurse") },
 	{ MODKEY|ControlMask,		XK_c,		spawn,		SHCMD("camtoggle") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
