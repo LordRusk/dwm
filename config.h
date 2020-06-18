@@ -162,6 +162,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_q,     	killclient,   	{0} },
 	{ MODKEY|ShiftMask,		XK_q,     	spawn,        	SHCMD("xdo kill") },
 	{ MODKEY|ShiftMask,             XK_e,     	quit,         	{0} },
+	{ MODKEY|ShiftMask|ControlMask, XK_e,     	quit,         	{1} },
 
 	/* spawn Keys */
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,          SHCMD("$TERMINAL") },
