@@ -23,7 +23,7 @@ static const char col_orng[] 	    = "#fa7a07";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray1, col_whie,  col_white  },
+	[SchemeSel]  = { col_gray1, col_orng,  col_red  },
 };
 
 typedef struct {
@@ -257,9 +257,9 @@ static Button buttons[] = {
 	{ ClkStatusText,        ShiftMask,      Button1,        sigdwmblocks,   {.i = 6} },
 	{ ClkStatusText,        ShiftMask,      Button2,        sigdwmblocks,   {.i = 7} },
 	{ ClkStatusText,        ShiftMask,      Button3,        spawn,          SHCMD("st -e nvim ~/.local/src/dwmblocks/blocks.h") },
-	{ ClkStatusText,        Controlmask,    Button1,        sigdwmblocks,   {.i = 8} },
-	{ ClkStatusText,        Controlmask,    Button2,        sigdwmblocks,   {.i = 9} },
-	{ ClkStatusText,        Controlmask,    Button3,        sigdwmblocks,   {.i = 10} },
+	{ ClkStatusText,        ControlMask,    Button1,        sigdwmblocks,   {.i = 8} },
+	{ ClkStatusText,        ControlMask,    Button2,        sigdwmblocks,   {.i = 9} },
+	{ ClkStatusText,        ControlMask,    Button3,        sigdwmblocks,   {.i = 10} },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
 	{ ClkClientWin,         MODKEY,         Button2,        togglefloating, {0} },
 	{ ClkClientWin,         MODKEY,         Button3,        resizemouse,    {0} },
