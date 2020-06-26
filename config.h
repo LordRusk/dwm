@@ -169,6 +169,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return,	spawn,          SHCMD("$TERMINAL") },
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("$TERMINAL -e bmon -p w*,*") },
 	{ MODKEY,			XK_d,		spawn,		SHCMD("dmenu_run -l 20") },
+	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("geodoppler") },
 	{ MODKEY,			XK_v,		spawn,		SHCMD("$TERMINAL -e lf") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("$TERMINAL -e neomutt; kill -$((34+12)) $(pidof dwmblocks)") },
 	{ MODKEY,			XK_t,		spawn,		SHCMD("torwrap; kill -$((34+7)) $(pidof dwmblocks)") },
