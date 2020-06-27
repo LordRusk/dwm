@@ -20,10 +20,13 @@ static const char col_white[] 	    = "#ffffff";
 static const char col_cyan[]        = "#005577";
 static const char col_red[] 	    = "#d50000";
 static const char col_orng[] 	    = "#fa7a07";
+static const char col_pink[] 	    = "#fe44ef";
+static const char col_dblue[] 	    = "#270e68";
+static const char col_nred[] 	    = "#fe3c59";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray1, col_orng,  col_red  },
+	[SchemeNorm] = { col_white, col_dblue, col_dblue },
+	[SchemeSel]  = { col_gray1, col_nred,  col_pink  },
 };
 
 typedef struct {
