@@ -22,12 +22,13 @@ static const char col_red[] 	    = "#d50000";
 static const char col_orng[] 	    = "#fa7a07";
 static const char col_pink[] 	    = "#fe44ef";
 static const char col_dblue[] 	    = "#270e68";
-static const char col_nred[] 	    = "#fe3c59";
+static const char col_lblue[] 	    = "#00c6c3";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_dblue, col_dblue },
-	[SchemeSel]  = { col_gray1, col_nred,  col_pink  },
+	[SchemeSel]  = { col_gray1, col_lblue,  col_pink  },
 };
+
 
 typedef struct {
 	const char *name;
