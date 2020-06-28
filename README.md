@@ -12,6 +12,7 @@ This is suckless, mmmbud, the source code is the documentation! Check out `confi
 - Cycle through layouts with  (`super+shift+comma/period`)
 - All layouts have gaps through `vanity gaps` (`super+z/x/a`)
 - Borderpx can me adjusted on the fly. (`super+shift+z/x/a`)
+- Bar has the ability to have transparency.
 - True fullscreen (`super+f`) and prevents focus shifting.
 - Windows can be made sticky (`super+ctrl+s`)
 - Selects the next window having the urgent flag regardless of the tag its on with (`super+shift+u`)
