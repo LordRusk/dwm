@@ -12,6 +12,7 @@ static const int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "monospace:size=10", "JoyPixels:size=10", "Font Awesome:size=10" };
+static const char col_black[]       = "#000000";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -23,12 +24,18 @@ static const char col_orng[] 	    = "#fa7a07";
 static const char col_pink[] 	    = "#fe44ef";
 static const char col_dblue[] 	    = "#270e68";
 static const char col_lblue[] 	    = "#00c6c3";
+static const unsigned int baralpha = 0;
+static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_white, col_dblue, col_dblue },
+	[SchemeNorm] = { col_white, col_black, col_dblue },
 	[SchemeSel]  = { col_gray1, col_lblue,  col_pink  },
 };
-
+static const unsigned int alphas[][3]      = {
+	/*               fg      bg        border     */
+	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
+	[SchemeSel]  = { OPAQUE, OPAQUE, borderalpha },
+};
 
 typedef struct {
 	const char *name;
