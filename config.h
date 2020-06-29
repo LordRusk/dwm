@@ -211,7 +211,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		spawn,		SHCMD("speedtest-notify") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("restart") },
 	{ MODKEY|ControlMask,		XK_r,		spawn,		SHCMD("dmenurefbar") },
-	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("$LOCKER") },
+	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("$LOCKER & sleep 1 && sysact hibernate") },
 
 	/* recording keys */
 	{ MODKEY,			XK_F12,		spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
