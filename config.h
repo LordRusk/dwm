@@ -18,14 +18,14 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_white[] 	    = "#ffffff";
+static const char col_dblue[] 	    = "#270e68";
 static const char col_cyan[]        = "#005577";
+static const char col_lblue[] 	    = "#00c6c3";
 static const char col_red[] 	    = "#d50000";
 static const char col_orng[] 	    = "#fa7a07";
 static const char col_pink[] 	    = "#fe44ef";
-static const char col_dblue[] 	    = "#270e68";
-static const char col_lblue[] 	    = "#00c6c3";
-static const unsigned int baralpha = 0;
-static const unsigned int borderalpha = OPAQUE;
+static const unsigned int transparent = 0;
+static const unsigned int translucent = 0xd0;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_black, col_dblue },
@@ -33,8 +33,8 @@ static const char *colors[][3]      = {
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
-	[SchemeNorm] = { OPAQUE, baralpha, borderalpha },
-	[SchemeSel]  = { OPAQUE, OPAQUE, borderalpha },
+	[SchemeNorm] = { OPAQUE, transparent, OPAQUE },
+	[SchemeSel]  = { OPAQUE, OPAQUE, OPAQUE },
 };
 
 typedef struct {
