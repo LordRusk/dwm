@@ -210,7 +210,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Insert,	spawn,		SHCMD("switchclip") },
 	{ MODKEY|ShiftMask,		XK_s,		spawn,		SHCMD("selectionswitch") },
 	{ MODKEY|ShiftMask,		XK_i,		spawn,		SHCMD("speedtest-notify") },
-	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("restart") },
+	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("dmenuresp") },
 	{ MODKEY|ControlMask,		XK_r,		spawn,		SHCMD("dmenurefbar") },
 	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("$LOCKER & sleep 1 && sysact hibernate") },
 
