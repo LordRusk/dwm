@@ -246,7 +246,7 @@ static Key keys[] = {
 	{ 0, XF86XK_MonBrightnessDown,	spawn,		SHCMD("xbacklight -dec 15") },
 
 	/* function Keys */
-	{ MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom "${READMEFILE:-${XDG_DATA_HOME:-$HOME/.local/share}/help.mom}" -Tpdf | zathura -") },
+	{ MODKEY,			XK_F1,		spawn,		SHCMD("groff -mom \"${READMEFILE:-${XDG_DATA_HOME:-$HOME/.local/share}/help.mom}\" -Tpdf | zathura -") },
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD("prompt 'Would You Like To Put The Computer To Sleep?' 'sudo -A zzz'") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
