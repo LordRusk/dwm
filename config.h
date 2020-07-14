@@ -25,7 +25,10 @@ static const char col_red[] 	    = "#d50000";
 static const char col_orng[] 	    = "#fa7a07";
 static const char col_pink[] 	    = "#fe44ef";
 static const unsigned int transparent = 0;
-static const unsigned int translucent = 0xa0;
+static const unsigned int translucent1 = 0xa0;
+static const unsigned int translucent2 = 0xb0;
+static const unsigned int translucent3 = 0xc0;
+static const unsigned int translucent4 = 0xd0;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_white, col_black, col_dblue },
@@ -33,7 +36,7 @@ static const char *colors[][3]      = {
 };
 static const unsigned int alphas[][3]      = {
 	/*               fg      bg        border     */
-	[SchemeNorm] = { OPAQUE, transparent, OPAQUE },
+	[SchemeNorm] = { OPAQUE, translucent1, OPAQUE },
 	[SchemeSel]  = { OPAQUE, OPAQUE, OPAQUE },
 };
 
