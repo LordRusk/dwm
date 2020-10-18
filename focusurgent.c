@@ -1,4 +1,3 @@
-
 static void
 focusurgent(const Arg *arg) {
 	Client *c;

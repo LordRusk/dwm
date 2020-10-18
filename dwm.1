@@ -30,15 +30,10 @@ top left corner.  The tags which are applied to one or more windows are
 indicated with an empty square in the top left corner.
 .P
 dwm draws a small border around windows to indicate the focus state.
-.P
-Using the command dwmc, you can control dmenu through the shell. It works
-with all patches I have applied. This can be used to send windows to certain
-tags, multiple tags, togglefullscr, togglesticky, togglescratch, etc, etc..
-
 .SH OPTIONS
 .TP
 .B \-v
-prints version information to standard output, then exits.
+prints version information to stderr, then exits.
 .SH USAGE
 .SS Status bar
 .TP
@@ -97,12 +92,6 @@ Sets monocle layout.
 .B Mod1\-space
 Toggles between current and previous layout.
 .TP
-.B Mod1\-Control\-,
-Cycles backwards in layout list.
-.TP
-.B Mod1\-Control\-.
-Cycles forwards in layout list.
-.TP
 .B Mod1\-j
 Focus next window.
 .TP
@@ -154,7 +143,7 @@ Add/remove all windows with nth tag to/from the view.
 .B Mod1\-Shift\-q
 Quit dwm.
 .TP
-.B Mod\-Control\-Shift\-e
+.B Mod1\-Control\-Shift\-q
 Restart dwm.
 .SS Mouse commands
 .TP
