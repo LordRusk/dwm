@@ -140,10 +140,10 @@ static Key keys[] = {
 
 	/* spawn Keys */
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("$TERMINAL") },
-	{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("$TERMINAL -e bmon -p w*,*") },
 	{ MODKEY,			XK_o,		spawn,		SHCMD("dmenu_run -l 20") },
+	{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("$TERMINAL -e bmon -p w*,*") },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("geodoppler") },
-	{ MODKEY,			XK_v,		spawn,		SHCMD("$TERMINAL -e lf") },
+	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("$TERMINAL -e lf") },
 	{ MODKEY,			XK_e,		spawn,		SHCMD("$TERMINAL -e neomutt; kill -$((34+12)) $(pidof gocaudices)") },
 	{ MODKEY|ControlMask,		XK_t,		spawn,		SHCMD("torwrap; kill -$((34+7)) $(pidof gocaudices)") },
 	{ MODKEY|ShiftMask,		XK_h,		spawn,		SHCMD("selectionhandler dmenuhandler") },
@@ -172,7 +172,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_i,		spawn,		SHCMD("speedtest-notify") },
 	{ MODKEY|ShiftMask,		XK_r,		spawn,		SHCMD("dmenuresp") },
 	{ MODKEY|ControlMask,		XK_r,		spawn,		SHCMD("dmenurefbar") },
-	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("$LOCKER & sleep 1 && sysact hibernate") },
+	{ MODKEY|ShiftMask,		XK_l,		spawn,		SHCMD("$LOCKER") },
+	{ MODKEY|ControlMask,		XK_l,		spawn,		SHCMD("$LOCKER & sleep 1 && sysact hibernate") },
 
 	/* recording keys */
 	{ MODKEY,			XK_F12,		spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
@@ -210,7 +211,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
 	{ MODKEY,			XK_F8,		spawn,		SHCMD("notify-send '📧 Syncing Mail'; mailsync && notify-send '📧 Mail Synced'; kill -$((34+12)) $(pidof gocaudices)") },
 	{ MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
-	{ MODKEY,			XK_F10,		spawn,		SHCMD("dmenuumount") },
+	{ MODKEY|ShiftMask,		XK_F9,		spawn,		SHCMD("dmenuumount") },
 };
 
 /* button definitions */
