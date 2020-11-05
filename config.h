@@ -152,7 +152,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat; kill -$((34+6)) $(pidof gocaudices)") },
 	{ MODKEY,			XK_c,		spawn,		SHCMD("$TERMINAL -e calcurse -D ~/.config/calcurse") },
 	{ MODKEY|ControlMask,		XK_c,		spawn,		SHCMD("camtoggle") },
-	{ MODKEY,			XK_w,		spawn,		SHCMD("$BROWSER") },
+	{ MODKEY,			XK_w,		spawn,		SHCMD("tabbed -c surf -e") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("$TERMINAL -e nmtui; kill -$((34+2)) $(pidof gocaudices) && kill -$((34+4)) $(pifof gocaudices)") },
 
 	/* scratch pads */
@@ -190,7 +190,7 @@ static Key keys[] = {
 	{ 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
 	{ 0, XF86XK_Calculator,		spawn,		SHCMD("$TERMINAL -e bc -l") },
 	{ 0, XF86XK_Sleep,		spawn,		SHCMD("sudo -A zzz") },
-	{ 0, XF86XK_WWW,		spawn,		SHCMD("$BROWSER") },
+	{ 0, XF86XK_WWW,		spawn,		SHCMD("tabbed -c surf -e") },
 	{ 0, XF86XK_DOS,		spawn,		SHCMD("$TERMINAL") },
 	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("$LOCKER") },
 	{ 0, XF86XK_TaskPane,		spawn,		SHCMD("$TERMINAL -e gotop") },
