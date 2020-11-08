@@ -1,21 +1,27 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "ibm plex mono:size=8", "joypixels:size=8", "font awesome:size=8" };
+// defualt colors
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
+// molokai colors
+static const char col_gray[]        = "#121212";
+static const char col_blue[]        = "#191970";
+static const char col_orange[]      = "#ff8700";
+static const char col_red[]         = "#8b0000";
 static const char *colors[][4]      = {
-	/*               fg         bg         border     float */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2, col_gray2 },
-	[SchemeSel] =  { col_gray4, col_cyan,  col_cyan, col_cyan },
+	/*               fg         bg        border      float */
+	[SchemeNorm] = { col_gray4, col_gray, col_gray,   col_gray },
+	[SchemeSel] =  { col_gray4, col_blue, col_orange, col_red },
 };
 
 typedef struct {
@@ -68,7 +74,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact     = 0.6; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 1;    /* 1 means respect size hints in tiled resizals */
 static const int decorhints  = 1;    /* 1 means respect decoration hints */
