@@ -15,13 +15,13 @@ static const char col_gray4[]       = "#eeeeee";
 static const char col_cyan[]        = "#005577";
 // molokai colors
 static const char col_gray[]        = "#121212";
-static const char col_blue[]        = "#191970";
+static const char col_magenta[]     = "#e71d36";
 static const char col_orange[]      = "#ff8700";
 static const char col_red[]         = "#8b0000";
 static const char *colors[][4]      = {
-	/*               fg         bg        border      float */
-	[SchemeNorm] = { col_gray4, col_gray, col_gray,   col_gray },
-	[SchemeSel] =  { col_gray4, col_blue, col_orange, col_red },
+	/*               fg         bg           border      float */
+	[SchemeNorm] = { col_gray4, col_gray,    col_gray,   col_gray },
+	[SchemeSel] =  { col_gray4, col_magenta, col_orange, col_red },
 };
 
 typedef struct {
@@ -163,7 +163,7 @@ static Key keys[] = {
 
 	/* scratch pads */
 	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
-	{ MODKEY,            		XK_u,	   togglescratch,  {.ui = 1 } },
+	{ MODKEY|ShiftMask,   		XK_u,	   togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,             XK_p,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY|ControlMask,           XK_p,	   togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,            	XK_c, 	   togglescratch,  {.ui = 4 } },
