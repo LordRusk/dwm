@@ -18,8 +18,18 @@ static const char col_gray[]        = "#121212";
 static const char col_magenta[]     = "#e71d36";
 static const char col_orange[]      = "#ff8700";
 static const char col_red[]         = "#8b0000";
+static const char col_geniva_blue[]  = "#68adb3";
+static const char col_brown[]        = "#5c431c";
+static const char col_blonde[]        = "#F0E2B6";
 static const char *colors[][4]      = {
 	/*               fg         bg           border      float */
+
+	/* [SchemeNorm]  = { col_geniva_blue, col_brown, col_brown },
+	[SchemeSel] = { col_brown, col_blonde, col_blonde }, */
+
+	/* [SchemeNorm] = { col_gray2, col_gray3, col_cyan },
+	[SchemeSel]  = { col_gray4, col_brown, col_geniva_blue }, */
+
 	[SchemeNorm] = { col_gray4, col_gray,    col_gray,   col_gray },
 	[SchemeSel] =  { col_gray4, col_magenta, col_orange, col_red },
 };
@@ -149,17 +159,17 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("$TERMINAL -e bmon -p w*,*") },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("geodoppler") },
 	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("$TERMINAL -e lf") },
-	{ MODKEY,			XK_e,		spawn,		SHCMD("$TERMINAL -e neomutt; kill -$((34+12)) $(pidof gocaudices)") },
-	{ MODKEY|ControlMask,		XK_t,		spawn,		SHCMD("torwrap; kill -$((34+7)) $(pidof gocaudices)") },
+	{ MODKEY,			XK_e,		spawn,		SHCMD("$TERMINAL -e neomutt; kill -$((34+12)) $(pidof zara)") },
+	{ MODKEY|ControlMask,		XK_t,		spawn,		SHCMD("torwrap; kill -$((34+7)) $(pidof zara)") },
 	{ MODKEY|ShiftMask,		XK_h,		spawn,		SHCMD("selectionhandler dmenuhandler") },
 	{ MODKEY|ControlMask,		XK_h,		spawn,		SHCMD("selectionhandler linkhandler") },
 	{ MODKEY|ShiftMask|ControlMask, XK_h,		spawn,		SHCMD("$TERMINAL -e htop") },
 	{ MODKEY,			XK_g,		spawn,		SHCMD("$TERMINAL -e gotop") },
-	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat; kill -$((34+6)) $(pidof gocaudices)") },
+	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat; kill -$((34+6)) $(pidof zara)") },
 	{ MODKEY,			XK_c,		spawn,		SHCMD("$TERMINAL -e calcurse -D ~/.config/calcurse") },
 	{ MODKEY|ControlMask,		XK_c,		spawn,		SHCMD("camtoggle") },
 	{ MODKEY,			XK_w,		spawn,		SHCMD("tabbed -c surf -e") },
-	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("$TERMINAL -e nmtui; kill -$((34+2)) $(pidof gocaudices) && kill -$((34+4)) $(pifof gocaudices)") },
+	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("$TERMINAL -e nmtui; kill -$((34+2)) $(pidof zara) && kill -$((34+4)) $(pifof zara)") },
 
 	/* scratch pads */
 	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
@@ -183,16 +193,16 @@ static Key keys[] = {
 	/* recording keys */
 	{ MODKEY,			XK_F12,		spawn,		SHCMD("maim pic-full-$(date '+%y%m%d-%H%M-%S').png") },
 	{ MODKEY|ShiftMask,		XK_F12,		spawn,		SHCMD("maimpick") },
-	{ MODKEY,			XK_r,		spawn,		SHCMD("dmenurecord; kill -$((34+9)) $(pidof gocaudices)") },
-	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dmenurecord kill; kill -$((34+9)) $(pidof gocaudices)") },
+	{ MODKEY,			XK_r,		spawn,		SHCMD("dmenurecord; kill -$((34+9)) $(pidof zara)") },
+	{ MODKEY,			XK_Delete,	spawn,		SHCMD("dmenurecord kill; kill -$((34+9)) $(pidof zara)") },
 
 	/* power keys */
 	{ MODKEY|ShiftMask,		XK_Escape,	spawn,		SHCMD("sysact") },
 
 	/* XF86 keys */
-	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof gocaudices)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -44 $(pidof gocaudices)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -44 $(pidof gocaudices)") },
+	{ 0, XF86XK_AudioMute,		spawn,		SHCMD("pamixer -t; kill -44 $(pidof zara)") },
+	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -44 $(pidof zara)") },
+	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -44 $(pidof zara)") },
 	{ 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
 	{ 0, XF86XK_Calculator,		spawn,		SHCMD("$TERMINAL -e bc -l") },
 	{ 0, XF86XK_Sleep,		spawn,		SHCMD("sudo -A zzz") },
@@ -200,7 +210,7 @@ static Key keys[] = {
 	{ 0, XF86XK_DOS,		spawn,		SHCMD("$TERMINAL") },
 	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("$LOCKER") },
 	{ 0, XF86XK_TaskPane,		spawn,		SHCMD("$TERMINAL -e gotop") },
-	{ 0, XF86XK_Mail,		spawn,		SHCMD("$TERMINAL -e neomutt ; kill -$((34+12)) $(pidof gocaudices)") },
+	{ 0, XF86XK_Mail,		spawn,		SHCMD("$TERMINAL -e neomutt ; kill -$((34+12)) $(pidof zara)") },
 	{ 0, XF86XK_MyComputer,		spawn,		SHCMD("$TERMINAL -e lf") },
 	{ 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
@@ -214,7 +224,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("displayselect") },
 	{ MODKEY,			XK_F4,		spawn,		SHCMD("prompt 'Would You Like To Put The Computer To Sleep?' 'sudo -A zzz'") },
 	{ MODKEY,			XK_F7,		spawn,		SHCMD("td-toggle") },
-	{ MODKEY,			XK_F8,		spawn,		SHCMD("notify-send '📧 Syncing Mail'; mailsync && notify-send '📧 Mail Synced'; kill -$((34+12)) $(pidof gocaudices)") },
+	{ MODKEY,			XK_F8,		spawn,		SHCMD("notify-send '📧 Syncing Mail'; mailsync && notify-send '📧 Mail Synced'; kill -$((34+12)) $(pidof zara)") },
 	{ MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY|ShiftMask,		XK_F9,		spawn,		SHCMD("dmenuumount") },
 };
