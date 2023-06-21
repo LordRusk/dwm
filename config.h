@@ -6,7 +6,7 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "ibm plex mono:size=8", "joypixels:size=8", "font awesome:size=8" };
+static const char *fonts[]          = { "ibm plex mono:size=10", "emojione:size=9", "font awesome:size=9" };
 // defualt colors
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
@@ -27,11 +27,11 @@ static const char *colors[][4]      = {
 	/* [SchemeNorm]  = { col_geniva_blue, col_brown, col_brown },
 	[SchemeSel] = { col_brown, col_blonde, col_blonde }, */
 
-	/* [SchemeNorm] = { col_gray2, col_gray3, col_cyan },
-	[SchemeSel]  = { col_gray4, col_brown, col_geniva_blue }, */
+	[SchemeNorm] = { col_gray2, col_gray3, col_cyan },
+	[SchemeSel]  = { col_gray4, col_brown, col_geniva_blue },
 
-	[SchemeNorm] = { col_gray4, col_gray,    col_gray,   col_gray },
-	[SchemeSel] =  { col_gray4, col_magenta, col_orange, col_red },
+	/* [SchemeNorm] = { col_gray4, col_gray,    col_gray,   col_gray },
+	[SchemeSel] =  { col_gray4, col_magenta, col_orange, col_red }, */
 };
 
 typedef struct {
@@ -44,6 +44,7 @@ const char *spcmd3[] = {"st", "-n", "sppm", "-g", "144x41", "-e", "pulsemixer", 
 const char *spcmd4[] = {"st", "-n", "sppu", "-g", "144x41", "-e", "popupgrade", NULL };
 const char *spcmd5[] = {"st", "-n", "spcalc", "-f", "monospace:size=16", "-g", "50x20", "-e", "bc", "-lq", NULL };
 const char *spcmd6[] = {"tabbed", "-n", "spsurf", "-g", "1200x900", "-c", "surf", "-e", NULL };
+const char *spcmd7[] = {"st", "-n", "spcal", "-g", "144x41", "-e", "st -e calcurse -D ~/.config/calcurse", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -52,6 +53,7 @@ static Sp scratchpads[] = {
 	{"sppu",	spcmd4},
 	{"spclac",	spcmd5},
 	{"spsurf",	spcmd6},
+	{"spcal",	spcmd7},
 };
 
 /* tagging */
@@ -81,6 +83,7 @@ static const Rule rules[] = {
 	{ NULL,	      "sppu",	  NULL,	    SPTAG(3),	    1,	          0,          -1 },
 	{ NULL,	      "spcalc",	  NULL,	    SPTAG(4),	    1,	          0,          -1 },
 	{ NULL,	      "spsurf",	  NULL,	    SPTAG(5),	    1,	          0,          -1 },
+	{ NULL,	      "spcal",	  NULL,	    SPTAG(6),	    1,	          0,          -1 },
 };
 
 /* layout(s) */
@@ -154,28 +157,28 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,           XK_e,      quit,           {1} },
 
 	/* spawn Keys */
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("$TERMINAL") },
+	{ MODKEY|ShiftMask,             XK_Return, spawn,          SHCMD("st") },
 	{ MODKEY,			XK_o,		spawn,		SHCMD("dmenu_run -l 20") },
-	{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("$TERMINAL -e bmon -p w*,*") },
+	{ MODKEY|ShiftMask,		XK_b,		spawn,		SHCMD("st -e bmon -p w*,*") },
 	{ MODKEY|ShiftMask,		XK_d,		spawn,		SHCMD("geodoppler") },
-	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("$TERMINAL -e lf") },
-	{ MODKEY,			XK_e,		spawn,		SHCMD("$TERMINAL -e neomutt; kill -$((34+12)) $(pidof zara)") },
+	{ MODKEY|ShiftMask,		XK_m,		spawn,		SHCMD("st -e lf") },
+	{ MODKEY,			XK_e,		spawn,		SHCMD("st -e neomutt; kill -$((34+12)) $(pidof zara)") },
 	{ MODKEY|ControlMask,		XK_t,		spawn,		SHCMD("torwrap; kill -$((34+7)) $(pidof zara)") },
 	{ MODKEY|ShiftMask,		XK_h,		spawn,		SHCMD("selectionhandler dmenuhandler") },
 	{ MODKEY|ControlMask,		XK_h,		spawn,		SHCMD("selectionhandler linkhandler") },
-	{ MODKEY|ShiftMask|ControlMask, XK_h,		spawn,		SHCMD("$TERMINAL -e htop") },
-	{ MODKEY,			XK_g,		spawn,		SHCMD("$TERMINAL -e gotop") },
-	{ MODKEY,			XK_n,		spawn,		SHCMD("$TERMINAL -e newsboat; kill -$((34+6)) $(pidof zara)") },
-	{ MODKEY,			XK_c,		spawn,		SHCMD("$TERMINAL -e calcurse -D ~/.config/calcurse") },
+	{ MODKEY|ShiftMask|ControlMask, XK_h,		spawn,		SHCMD("st -e htop") },
+	{ MODKEY,			XK_g,		spawn,		SHCMD("st -e gotop") },
+	{ MODKEY,			XK_n,		spawn,		SHCMD("st -e newsboat; kill -$((34+6)) $(pidof zara)") },
 	{ MODKEY|ControlMask,		XK_c,		spawn,		SHCMD("camtoggle") },
-	{ MODKEY,			XK_w,		spawn,		SHCMD("tabbed -c surf -e") },
-	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("$TERMINAL -e nmtui; kill -$((34+2)) $(pidof zara) && kill -$((34+4)) $(pifof zara)") },
+	{ MODKEY,			XK_w,		spawn,		SHCMD("brave") },
+	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("st -e nmtui; kill -$((34+2)) $(pidof zara) && kill -$((34+4)) $(pifof zara)") },
 
 	/* scratch pads */
 	{ MODKEY,            		XK_y,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY|ShiftMask,   		XK_u,	   togglescratch,  {.ui = 1 } },
 	{ MODKEY|ShiftMask,             XK_p,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY|ControlMask,           XK_p,	   togglescratch,  {.ui = 3 } },
+	{ MODKEY,		     	XK_c, 	   togglescratch,  {.ui = 6 } },
 	{ MODKEY|ShiftMask,            	XK_c, 	   togglescratch,  {.ui = 4 } },
 	{ MODKEY|ControlMask,     	XK_b, 	   togglescratch,  {.ui = 5 } },
 
@@ -204,14 +207,14 @@ static Key keys[] = {
 	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -44 $(pidof zara)") },
 	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -44 $(pidof zara)") },
 	{ 0, XF86XK_PowerOff,		spawn,		SHCMD("sysact") },
-	{ 0, XF86XK_Calculator,		spawn,		SHCMD("$TERMINAL -e bc -l") },
+	{ 0, XF86XK_Calculator,		spawn,		SHCMD("st -e bc -l") },
 	{ 0, XF86XK_Sleep,		spawn,		SHCMD("sudo -A zzz") },
 	{ 0, XF86XK_WWW,		spawn,		SHCMD("tabbed -c surf -e") },
-	{ 0, XF86XK_DOS,		spawn,		SHCMD("$TERMINAL") },
+	{ 0, XF86XK_DOS,		spawn,		SHCMD("st") },
 	{ 0, XF86XK_ScreenSaver,	spawn,		SHCMD("$LOCKER") },
-	{ 0, XF86XK_TaskPane,		spawn,		SHCMD("$TERMINAL -e gotop") },
-	{ 0, XF86XK_Mail,		spawn,		SHCMD("$TERMINAL -e neomutt ; kill -$((34+12)) $(pidof zara)") },
-	{ 0, XF86XK_MyComputer,		spawn,		SHCMD("$TERMINAL -e lf") },
+	{ 0, XF86XK_TaskPane,		spawn,		SHCMD("st -e gotop") },
+	{ 0, XF86XK_Mail,		spawn,		SHCMD("st -e neomutt ; kill -$((34+12)) $(pidof zara)") },
+	{ 0, XF86XK_MyComputer,		spawn,		SHCMD("st -e lf") },
 	{ 0, XF86XK_Launch1,		spawn,		SHCMD("xset dpms force off") },
 	{ 0, XF86XK_TouchpadToggle,	spawn,		SHCMD("(synclient | grep 'TouchpadOff.*1' && synclient TouchpadOff=0) || synclient TouchpadOff=1") },
 	{ 0, XF86XK_TouchpadOff,	spawn,		SHCMD("synclient TouchpadOff=1") },
@@ -244,4 +247,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
