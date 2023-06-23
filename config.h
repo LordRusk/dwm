@@ -170,7 +170,7 @@ static Key keys[] = {
 	{ MODKEY,			XK_g,		spawn,		SHCMD("st -e gotop") },
 	{ MODKEY,			XK_n,		spawn,		SHCMD("st -e newsboat; kill -$((34+6)) $(pidof zara)") },
 	{ MODKEY|ControlMask,		XK_c,		spawn,		SHCMD("camtoggle") },
-	{ MODKEY,			XK_w,		spawn,		SHCMD("brave") },
+	{ MODKEY,			XK_w,		spawn,		SHCMD("firefox") },
 	{ MODKEY|ShiftMask,		XK_w,		spawn,		SHCMD("st -e nmtui; kill -$((34+2)) $(pidof zara) && kill -$((34+4)) $(pifof zara)") },
 
 	/* scratch pads */
